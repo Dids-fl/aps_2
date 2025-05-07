@@ -48,3 +48,16 @@ def calcula_pontos_soma(dados_rolados):
     for valor in dados_rolados:
         total += valor
     return total
+
+def calcula_pontos_sequencia_baixa(lista):
+    lista_ordenada = sorted(set(lista))
+    soma = 0
+    for i in range(len(lista_ordenada) - 1):
+        if lista_ordenada[i] == lista_ordenada[i+1] - 1:
+            soma += 1 
+            if soma == 3:
+                return 15
+        else:
+            soma = 0
+    return 0
+    
