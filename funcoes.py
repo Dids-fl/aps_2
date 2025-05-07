@@ -92,3 +92,27 @@ def calcula_pontos_full_house(lista):
     else:
         return 0
 
+def calcula_pontos_quadra (lista):
+    contar1 = lista.count(1)
+    contar2 = lista.count(2)
+    contar3 = lista.count(3)
+    contar4 = lista.count(4)
+    contar5 = lista.count(5)
+    contar6 = lista.count(6)
+    
+    contagens = [contar1, contar2, contar3, contar4, contar5, contar6]
+
+    contar_maior = 0
+    for i in contagens:
+        if i > contar_maior:
+            contar_maior=i
+
+    soma = 0
+
+    if contar_maior>3:
+        for i in lista:
+            soma = soma + i
+        return soma
+    else:
+        return 0
+
